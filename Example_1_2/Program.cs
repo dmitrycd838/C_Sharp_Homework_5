@@ -4,7 +4,7 @@
 
 int ReadData(string text)
 {
-    System.Console.WriteLine(text);
+    System.Console.Write(text);
     return Convert.ToInt32(Console.ReadLine());
 }
 
@@ -71,4 +71,4 @@ minSum++;
 
 System.Console.WriteLine();
 System.Console.WriteLine("Строка с наименьшей суммой равна: " + minSum);
-System.Console.WriteLine("Наименьшая сумма равна: " + sumLine);
+System.Console.Write("Наименьшая сумма равна: " + sumLine);
