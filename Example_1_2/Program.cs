@@ -4,13 +4,12 @@
 
 int ReadData(string text)
 {
-    Console.Write(text);
+    System.Console.WriteLine(text);
     return Convert.ToInt32(Console.ReadLine());
 }
 
 int[,] GenerateMatrix(int row, int col, int leftRange, int rightRange)
 {
-
     int[,] matrix = new int[row, col];
     Random rand = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -52,17 +51,16 @@ int col = ReadData("Количество столбцов массива: ");
 int leftRange = ReadData("Левая граница массива: ");
 int rightRange = ReadData("Правая граница массива: ");
 
-int[,] arr2D = GenerateMatrix(row, col, leftRange, rightRange);
+int[,] allarray = GenerateMatrix(row, col, leftRange, rightRange);
 
-
-Console.WriteLine("Исходный массив: ");
-PrintMatrix(arr2D);
+System.Console.WriteLine("Исходный массив: ");
+PrintMatrix(allarray);
 
 int minSum = 0;
-int sumLine = arraySum(arr2D, 0);
-for (int i = 1; i < arr2D.GetLength(0); i++)
+int sumLine = arraySum(allarray, 0);
+for (int i = 1; i < allarray.GetLength(0); i++)
 {
-    int tempSumLine = arraySum(arr2D, i);
+    int tempSumLine = arraySum(allarray, i);
     if (sumLine > tempSumLine)
     {
         sumLine = tempSumLine;
@@ -71,6 +69,6 @@ for (int i = 1; i < arr2D.GetLength(0); i++)
 }
 minSum++;
 
-Console.WriteLine();
-Console.WriteLine("Строка с наименьшей суммой равна: " + minSum);
-Console.WriteLine("Наименьшая сумма равна: " + sumLine);
+System.Console.WriteLine();
+System.Console.WriteLine("Строка с наименьшей суммой равна: " + minSum);
+System.Console.WriteLine("Наименьшая сумма равна: " + sumLine);
